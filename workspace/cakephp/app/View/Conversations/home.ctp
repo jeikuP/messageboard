@@ -63,13 +63,12 @@
             });
         });
 
-        // JavaScript in your view file
         $(document).on('click', '.delete-conversation', function (e) {
             e.preventDefault();
             var conversationId = $(this).data('conversation-id');
             var deleteUrl = "<?php echo $this->Html->url(array('controller' => 'conversations', 'action' => 'delete')); ?>/" + conversationId;
 
-            // Confirm deletion with a modal or other confirmation method if necessary
+            // Confirm deletion with a modal
             if (confirm("Are you sure you want to delete this conversation?")) {
                 $.ajax({
                     url: deleteUrl,
@@ -80,7 +79,7 @@
 
                         // Optionally remove the conversation from the UI
                         $(`.delete-conversation[data-conversation-id="${conversationId}"]`).closest('li').fadeOut('normal', function () {
-                            $(this).remove(); // Ensure complete removal after fadeOut
+                            $(this).remove();
                         });
 
                         // Update total conversations count

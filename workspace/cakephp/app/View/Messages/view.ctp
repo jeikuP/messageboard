@@ -43,6 +43,7 @@
                 <?php echo $this->element('dropdown_menu'); ?>
             </div>
         </div>
+        <!-- conversation details with link to the recipient -->
         <div class="mb-3 mt-3 d-flex align-items-center justify-content-between">
             <h4>Your Conversation with
                 <?php
@@ -161,6 +162,7 @@
                 </li>
             <?php endforeach; ?>
         </ul>
+
         <!-- Pagination controls -->
         <div class="mt-3 d-flex justify-content-center">
             <ul class="pagination">
@@ -205,7 +207,7 @@
                     // Handle success response
                     console.log(response);
 
-                    // Prepare the new message HTML
+                    // Prepare the new message <li> to be prepended
                     var newMessageHtml = `
                         <li class="list-group-item d-flex justify-content-end mb-2 bg-light" style="display: none;">
                             <div class="d-flex align-items-center">
@@ -231,7 +233,6 @@
 
                     // Prepend the new message with animation
                     var $newMessage = $(newMessageHtml).prependTo('#messageList').slideToggle();
-                    // Clear textarea
                     $('#replyMessage').val('');
                 },
                 error: function (xhr, status, error) {
@@ -243,10 +244,10 @@
 
         // Delete Message via Ajax
         $(document).on('click', '.delete-message', function (event) {
-            event.preventDefault(); // Prevent default action of the button click
+            event.preventDefault();
 
             var messageId = $(this).data('message-id');
-            var deleteUrl = $(this).data('url'); // Assuming data-url is set correctly in the HTML
+            var deleteUrl = $(this).data('url');
 
             // Reference to the message list item to be deleted
             var $messageListItem = $(this).closest('li');

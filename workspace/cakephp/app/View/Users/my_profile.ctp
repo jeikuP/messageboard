@@ -21,7 +21,6 @@
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="d-flex">
-                        <!-- Back Button -->
                         <a href="<?php echo $this->Html->url(array('controller' => 'conversations', 'action' => 'home')); ?>"
                             class="btn btn-secondary mr-3"><i class="bi bi-arrow-left"></i></a>
                         <h2 class="mb-0">My Profile</h2>

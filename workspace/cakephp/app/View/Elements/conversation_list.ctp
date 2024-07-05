@@ -53,7 +53,7 @@
                 </a>
             </div>
 
-            <!-- Trash Icon for Delete -->
+            <!-- Delete -->
             <div class="ml-auto">
                 <button class="btn btn-link delete-conversation"
                     data-conversation-id="<?= $conversation['Conversation']['id']; ?>">

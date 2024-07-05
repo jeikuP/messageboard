@@ -23,6 +23,7 @@
                 <a href="javascript:history.back()" class="btn btn-secondary mr-3"><i class="bi bi-arrow-left"></i></a>
                 <h2 class="mb-0">Compose New Message</h2>
             </div>
+            <!-- Menu -->
             <div class="d-flex">
                 <?php echo $this->element('user_info'); ?>
                 <?php echo $this->element('dropdown_menu'); ?>
